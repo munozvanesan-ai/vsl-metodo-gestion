@@ -9,163 +9,184 @@
 :root{
   --salmon:#E8927A;--salmon-dark:#C9714F;--salmon-pale:#FDF0EC;
   --navy:#1C3557;--navy-mid:#2A4A73;--cream:#FAFAF8;
-  --dark:#1A1A1A;--text:#3D3D3D;--text-light:#888;--white:#ffffff;
+  --dark:#1A1A1A;--text:#3D3D3D;--text-light:#666;--white:#ffffff;
   --gold:#C8963E;--radius:14px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:17px;}
 
 /* HERO */
-.hero{background:linear-gradient(160deg,#FDF6F3 0%,#FAFAF8 50%,#EEF3F8 100%);padding:64px 24px 72px;text-align:center;position:relative;overflow:hidden;}
+.hero{background:linear-gradient(160deg,#FDF6F3 0%,#FAFAF8 50%,#EEF3F8 100%);padding:56px 24px 64px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(232,146,122,0.13) 0%,transparent 68%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-40px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(28,53,87,0.05) 0%,transparent 70%);pointer-events:none;}
-.logo{margin-bottom:32px;}
+.logo{margin-bottom:28px;}
 .logo img{width:80px;height:auto;margin:0 auto;display:block;}
-.hero-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--salmon-dark);margin-bottom:20px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,64px);font-weight:900;color:var(--dark);line-height:1.08;max-width:900px;margin:0 auto 8px;white-space:nowrap;}
-.hero h1 em{font-style:italic;color:var(--salmon);}
-.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;color:var(--salmon-dark);font-style:italic;margin-bottom:16px;}
-.hero-tagline{font-size:19px;font-weight:400;color:var(--text);max-width:520px;margin:0 auto 48px;line-height:1.7;}
-.hero-tagline strong{color:var(--text);font-weight:600;}
+.hero-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--salmon-dark);margin-bottom:18px;}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,5.5vw,62px);
+  font-weight:900;color:var(--dark);line-height:1.05;
+  max-width:800px;margin:0 auto 10px;
+  white-space:nowrap;
+}
+@media(max-width:680px){.hero h1{white-space:normal;font-size:clamp(28px,8vw,42px);}}
+.hero-sub{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(20px,3vw,28px);
+  font-weight:700;font-style:italic;
+  color:var(--salmon-dark);margin-bottom:14px;
+}
+.hero-tagline{font-size:18px;font-weight:400;color:var(--text-light);max-width:500px;margin:0 auto 44px;line-height:1.7;}
+.hero-tagline strong{color:var(--text);font-weight:700;}
 
-/* Video */
-.video-container{max-width:720px;margin:0 auto 48px;border-radius:20px;overflow:hidden;box-shadow:0 16px 64px rgba(0,0,0,0.14);background:var(--navy);aspect-ratio:16/9;position:relative;}
-.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;}
+/* Video principal */
+.video-container{max-width:700px;margin:0 auto 44px;border-radius:20px;overflow:hidden;box-shadow:0 16px 64px rgba(0,0,0,0.14);background:var(--navy);aspect-ratio:16/9;position:relative;}
+.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px;text-align:center;}
 .play-btn{width:72px;height:72px;background:rgba(232,146,122,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid rgba(232,146,122,0.4);}
 .play-btn svg{width:30px;height:30px;fill:#E8927A;margin-left:4px;}
-.video-placeholder p{color:rgba(255,255,255,0.45);font-size:14px;max-width:280px;}
-.video-duracion{color:#F2A99A;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.video-duracion{color:#F2A99A;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.video-placeholder p{color:rgba(255,255,255,0.5);font-size:15px;}
 
-/* Botón */
-.hero-cta{display:flex;flex-direction:column;align-items:center;gap:10px;}
-.btn-main{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--salmon);color:var(--white);font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;padding:19px 44px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;max-width:460px;width:100%;box-shadow:0 6px 28px rgba(232,146,122,0.40);transition:transform .18s,box-shadow .18s,background .18s;animation:pulse-s 2.4s ease-in-out infinite;}
+/* Botones */
+.btn-main{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--salmon);color:var(--white);font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;padding:20px 44px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;max-width:480px;width:100%;box-shadow:0 6px 28px rgba(232,146,122,0.40);transition:transform .18s,box-shadow .18s,background .18s;animation:pulse-s 2.4s ease-in-out infinite;}
 .btn-main:hover{background:var(--salmon-dark);transform:translateY(-2px);box-shadow:0 12px 36px rgba(232,146,122,0.52);}
 @keyframes pulse-s{0%,100%{box-shadow:0 6px 28px rgba(232,146,122,0.40);}50%{box-shadow:0 12px 40px rgba(232,146,122,0.62);}}
-.btn-nota{font-size:12px;color:var(--text-light);}
+.hero-cta{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.btn-nota{font-size:13px;color:var(--text-light);}
 
 /* Prueba social */
 .prueba{background:var(--navy);padding:20px 24px;text-align:center;}
-.prueba p{color:rgba(255,255,255,0.7);font-size:14px;}
+.prueba p{color:rgba(255,255,255,0.75);font-size:15px;}
 .prueba strong{color:#F2A99A;}
 
-/* Eyebrow y títulos */
+/* Secciones */
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--salmon);margin-bottom:12px;}
-.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,38px);font-weight:900;color:var(--dark);line-height:1.2;margin-bottom:40px;}
-
-/* TESTIMONIOS */
-.testimonios{padding:80px 24px;max-width:1000px;margin:0 auto;}
-.videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:48px;}
-.video-card{border-radius:var(--radius);overflow:hidden;background:var(--navy);aspect-ratio:16/9;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.1);}
-.video-thumb-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
-.play-sm{width:44px;height:44px;background:rgba(232,146,122,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-.play-sm svg{width:18px;height:18px;fill:#E8927A;margin-left:3px;}
-.video-thumb-placeholder span{color:rgba(255,255,255,0.4);font-size:11px;}
-
-/* Google reviews */
-.google-reviews{background:var(--white);border-radius:20px;padding:32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);}
-.google-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
-.google-logo{font-size:15px;font-weight:900;color:#4285F4;letter-spacing:-0.5px;}
-.google-rating{display:flex;align-items:center;gap:8px;}
-.stars{color:#FBBC05;font-size:18px;letter-spacing:2px;}
-.rating-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--dark);}
-.rating-count{font-size:13px;color:var(--text-light);}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.review-card{background:var(--cream);border-radius:var(--radius);padding:18px;}
-.review-stars{color:#FBBC05;font-size:14px;margin-bottom:8px;}
-.review-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:10px;font-style:italic;}
-.review-author{font-size:12px;font-weight:700;color:var(--navy);}
-.review-role{font-size:11px;color:var(--text-light);}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4.5vw,38px);font-weight:900;color:var(--dark);line-height:1.2;margin-bottom:36px;}
 
 /* MÓDULOS */
-.modulos{background:var(--navy);padding:80px 24px;}
+.modulos{background:var(--navy);padding:72px 24px;}
 .modulos-inner{max-width:800px;margin:0 auto;}
 .modulos-inner .eyebrow{color:rgba(232,146,122,0.85);}
 .modulos-inner .sec-title{color:var(--white);}
-
-/* Intro módulos */
-.modulos-intro{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:var(--radius);padding:20px 24px;margin-bottom:20px;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;}
-.modulos-intro strong{color:rgba(255,255,255,0.85);}
-
+.modulos-intro{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;font-size:15px;color:rgba(255,255,255,0.65);line-height:1.65;}
+.modulos-intro strong{color:rgba(255,255,255,0.9);}
 .modulo-list{display:flex;flex-direction:column;gap:14px;margin-bottom:14px;}
-.modulo-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-left:3px solid var(--salmon);border-radius:var(--radius);padding:24px 28px;}
+.modulo-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-left:3px solid var(--salmon);border-radius:var(--radius);padding:22px 26px;}
 .modulo-tag{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(232,146,122,0.8);text-transform:uppercase;margin-bottom:8px;}
 .modulo-item h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.modulo-item p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.65;}
-
-/* Bonus */
-.bonus-card{background:linear-gradient(135deg,rgba(200,150,62,0.15) 0%,rgba(232,146,122,0.1) 100%);border:1px solid rgba(200,150,62,0.35);border-radius:var(--radius);padding:24px 28px;}
+.modulo-item p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);line-height:1.65;}
+.bonus-card{background:linear-gradient(135deg,rgba(200,150,62,0.15) 0%,rgba(232,146,122,0.1) 100%);border:1px solid rgba(200,150,62,0.35);border-radius:var(--radius);padding:22px 26px;}
 .bonus-tag{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
 .bonus-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.bonus-card p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.65;}
+.bonus-card p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.65);line-height:1.65;}
 
 /* PRECIO */
-.precio-section{background:linear-gradient(160deg,#1C3557 0%,#2A4A73 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
+.precio-section{background:linear-gradient(160deg,#1C3557 0%,#2A4A73 100%);padding:72px 24px;text-align:center;position:relative;overflow:hidden;}
 .precio-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(232,146,122,0.1) 0%,transparent 65%);pointer-events:none;}
 .precio-section .eyebrow{color:rgba(232,146,122,0.85);}
-.precio-section .sec-title{color:var(--white);max-width:560px;margin:0 auto 48px;}
-.precio-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:40px 32px;max-width:480px;margin:0 auto 40px;}
-.precio-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;}
-.precio-tachado{font-family:'Playfair Display',serif;font-size:24px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-bottom:4px;}
+.precio-section .sec-title{color:var(--white);max-width:560px;margin:0 auto 40px;}
+.precio-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:36px 28px;max-width:460px;margin:0 auto 36px;}
+.precio-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;}
+.precio-tachado{font-family:'Playfair Display',serif;font-size:22px;color:rgba(255,255,255,0.28);text-decoration:line-through;margin-bottom:4px;}
 .precio-valor{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,64px);font-weight:900;color:var(--white);line-height:1;margin-bottom:8px;}
-.precio-tag{display:inline-block;background:rgba(232,146,122,0.2);border:1px solid rgba(232,146,122,0.4);color:#F2A99A;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px;}
-.precio-cuotas{font-size:15px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
-.precio-cuotas .tachado{text-decoration:line-through;color:rgba(255,255,255,0.3);}
-.precio-cuotas strong{color:#F2A99A;font-weight:600;}
-
-/* Contador */
-.contador-wrap{margin:28px 0;}
-.contador-label{font-size:12px;color:rgba(255,255,255,0.45);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.precio-badge{display:inline-block;background:rgba(232,146,122,0.2);border:1px solid rgba(232,146,122,0.4);color:#F2A99A;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.precio-cuotas{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
+.precio-cuotas .tachado{text-decoration:line-through;color:rgba(255,255,255,0.28);}
+.precio-cuotas strong{color:#F2A99A;font-weight:700;}
+.contador-wrap{margin:24px 0;}
+.contador-label{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
 .contador{display:flex;align-items:center;justify-content:center;gap:8px;}
 .contador-bloque{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;min-width:64px;}
 .contador-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--white);line-height:1;}
 .contador-texto{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
 .contador-sep{font-size:24px;color:var(--salmon);font-weight:700;margin-bottom:16px;}
-.contador-urgencia{font-size:13px;color:rgba(255,255,255,0.45);font-style:italic;margin-top:14px;}
-
-.precio-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0;}
+.contador-urgencia{font-size:13px;color:rgba(255,255,255,0.4);font-style:italic;margin-top:12px;}
+.precio-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:22px 0;}
 .precio-features{list-style:none;text-align:left;}
-.precio-features li{font-size:14px;color:rgba(255,255,255,0.65);padding:6px 0;display:flex;align-items:center;gap:10px;}
+.precio-features li{font-size:15px;color:rgba(255,255,255,0.7);padding:7px 0;display:flex;align-items:center;gap:10px;}
 .precio-features li::before{content:'✓';color:var(--salmon);font-weight:700;flex-shrink:0;}
 
-/* FORMULARIO */
-.form-section{padding:80px 24px;max-width:600px;margin:0 auto;}
-.form-card{background:var(--white);border-radius:20px;padding:40px 32px;box-shadow:0 8px 48px rgba(0,0,0,0.08);}
+/* TESTIMONIOS */
+.testimonios-section{padding:72px 24px;max-width:1000px;margin:0 auto;}
+.testimonios-section .sec-title{color:var(--dark);}
+.videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;}
+@media(max-width:600px){.videos-grid{grid-template-columns:repeat(2,1fr);}}
+.video-card{border-radius:var(--radius);overflow:hidden;background:var(--navy);aspect-ratio:16/9;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+.video-thumb-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+.play-sm{width:44px;height:44px;background:rgba(232,146,122,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.play-sm svg{width:18px;height:18px;fill:#E8927A;margin-left:3px;}
+.video-thumb-ph span{color:rgba(255,255,255,0.4);font-size:11px;}
+.videos-extra{display:none;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;}
+@media(max-width:600px){.videos-extra{grid-template-columns:repeat(2,1fr);}}
+.videos-extra.visible{display:grid;}
+.btn-ver-mas{background:none;border:1.5px solid var(--salmon);color:var(--salmon);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;padding:13px 32px;border-radius:100px;cursor:pointer;transition:background .18s,color .18s;margin-bottom:48px;}
+.btn-ver-mas:hover{background:var(--salmon);color:var(--white);}
+
+/* Google reviews */
+.google-reviews{background:var(--white);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.06);margin-bottom:0;}
+.google-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.google-logo{font-size:15px;font-weight:900;color:#4285F4;}
+.google-rating{display:flex;align-items:center;gap:8px;}
+.stars{color:#FBBC05;font-size:18px;letter-spacing:2px;}
+.rating-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--dark);}
+.rating-count{font-size:13px;color:var(--text-light);}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.review-card{background:var(--cream);border-radius:var(--radius);padding:16px;}
+.review-stars{color:#FBBC05;font-size:14px;margin-bottom:8px;}
+.review-text{font-size:14px;color:var(--text);line-height:1.6;margin-bottom:10px;font-style:italic;}
+.review-author{font-size:13px;font-weight:700;color:var(--navy);}
+.review-role{font-size:12px;color:var(--text-light);}
+
+/* FORMULARIO — oculto al inicio */
+.form-section{padding:72px 24px;max-width:600px;margin:0 auto;display:none;}
+.form-section.visible{display:block;}
+.form-card{background:var(--white);border-radius:20px;padding:36px 28px;box-shadow:0 8px 48px rgba(0,0,0,0.08);}
 .form-card h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--navy);margin-bottom:8px;line-height:1.3;}
-.form-sub{font-size:14px;color:var(--text-light);margin-bottom:32px;line-height:1.6;}
+.form-sub{font-size:15px;color:var(--text-light);margin-bottom:28px;line-height:1.6;}
 .form-group{margin-bottom:16px;}
-.form-group label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:0.3px;}
-.form-group input,.form-group select{width:100%;padding:13px 15px;border:1.5px solid #E8E3DC;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--dark);outline:none;transition:border-color .18s;background:#FAFAF8;}
+.form-group label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.form-group input,.form-group select{width:100%;padding:14px 16px;border:1.5px solid #E8E3DC;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--dark);outline:none;transition:border-color .18s;background:#FAFAF8;}
 .form-group input:focus,.form-group select:focus{border-color:var(--salmon);background:var(--white);}
 .form-group input::placeholder{color:#ccc;}
 .opciones-grid{display:grid;gap:10px;}
 .opcion-btn{display:flex;align-items:flex-start;gap:12px;background:#FAFAF8;border:1.5px solid #E8E3DC;border-radius:10px;padding:14px 16px;cursor:pointer;transition:border-color .18s,background .18s;text-align:left;width:100%;}
 .opcion-btn:hover,.opcion-btn.selected{border-color:var(--salmon);background:var(--salmon-pale);}
-.opcion-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
-.opcion-text h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.opcion-text p{font-size:12px;color:var(--text-light);line-height:1.5;}
-.btn-form{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;background:var(--salmon);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;font-weight:700;padding:17px 24px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(232,146,122,0.38);transition:transform .18s,background .18s;}
+.opcion-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.opcion-text h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.opcion-text p{font-size:13px;color:var(--text-light);line-height:1.5;}
+.btn-form{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;background:var(--salmon);color:var(--white);font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;padding:18px 24px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(232,146,122,0.38);transition:transform .18s,background .18s;}
 .btn-form:hover{background:var(--salmon-dark);transform:translateY(-2px);}
-.form-nota{font-size:11px;color:#ccc;text-align:center;margin-top:12px;}
+.form-nota{font-size:12px;color:#ccc;text-align:center;margin-top:12px;}
 
 /* No califica */
-.no-califica{display:none;text-align:center;padding:32px 24px;}
+.no-califica{display:none;text-align:center;padding:32px 24px;max-width:560px;margin:0 auto;}
 .no-califica h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:12px;}
-.no-califica p{font-size:14px;color:var(--text-light);line-height:1.7;margin-bottom:24px;}
+.no-califica p{font-size:15px;color:var(--text-light);line-height:1.7;margin-bottom:24px;}
 
 /* Calendly */
 .calendly-section{display:none;padding:40px 24px;max-width:600px;margin:0 auto;text-align:center;}
 .calendly-section h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:var(--navy);margin-bottom:8px;}
-.calendly-section p{font-size:14px;color:var(--text-light);margin-bottom:28px;}
+.calendly-section p{font-size:15px;color:var(--text-light);margin-bottom:28px;}
 .calendly-placeholder{background:var(--white);border-radius:20px;padding:48px 24px;box-shadow:0 8px 40px rgba(0,0,0,0.07);}
-.calendly-placeholder p{color:var(--text-light);font-size:14px;}
+
+/* VANESA */
+.vanesa-section{padding:72px 24px;max-width:720px;margin:0 auto;}
+.vanesa-section .sec-title{color:var(--dark);}
+.vanesa-card{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.07);}
+.vanesa-top{background:var(--salmon-pale);padding:28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.vanesa-foto{width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center 15%;border:3px solid var(--white);box-shadow:0 4px 16px rgba(232,146,122,0.22);flex-shrink:0;}
+.vanesa-top h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:5px;}
+.vanesa-cargo{font-size:13px;color:var(--salmon-dark);font-weight:600;line-height:1.6;}
+.vanesa-body{padding:28px;}
+.vanesa-body p{font-size:15px;line-height:1.78;color:var(--text);margin-bottom:14px;}
+.vanesa-body p:last-child{margin-bottom:0;}
 
 /* Footer */
 footer{background:#111;padding:28px 24px;text-align:center;}
-.footer-logo img{width:52px;height:auto;margin:0 auto 8px;opacity:0.8;}
-footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
+.footer-logo img{width:52px;height:auto;margin:0 auto 8px;opacity:0.8;display:block;}
+footer p{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;}
 
-@media(max-width:600px){body{font-size:18px;}.btn-main{font-size:18px;padding:22px 32px;}.modulo-item p,.bonus-card p,.review-text{font-size:16px;}.precio-cuotas{font-size:16px;}.form-group input,.form-group select{font-size:16px;padding:15px;}.opcion-text h4{font-size:15px;}.opcion-text p{font-size:14px;}} /* Animaciones */
+/* Animaciones */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 </style>
@@ -177,7 +198,7 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
   <div class="logo"><img src="LOGO_SALMON.png" alt="VM Gestión Digital"></div>
   <p class="hero-eyebrow">Programa Online · 8 Semanas</p>
   <h1>Método de Gestión Inteligente</h1>
-  <p class="hero-sub"><em>para pequeños negocios y emprendedores</em></p>
+  <p class="hero-sub">para pequeños negocios y emprendedores</p>
   <p class="hero-tagline">Ordená el caos operativo en 30 días.<br><strong>Amigate con la tecnología y empezá a dirigir con facilidad.</strong></p>
 
   <div class="video-container">
@@ -193,7 +214,7 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
   </div>
 
   <div class="hero-cta">
-    <button class="btn-main" onclick="scrollToForm()">Quiero ordenar mi negocio →</button>
+    <button class="btn-main" onclick="mostrarFormulario()">Quiero ordenar mi negocio →</button>
     <span class="btn-nota">Mirá el video completo y agendá tu llamada gratuita</span>
   </div>
 </section>
@@ -203,94 +224,36 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
   <p><strong>+200 dueños de negocios</strong> ya ordenaron su empresa con este método</p>
 </div>
 
-<!-- TESTIMONIOS -->
-<section class="testimonios">
-  <p class="eyebrow reveal">Lo que dicen los que ya lo hicieron</p>
-  <h2 class="sec-title reveal">Resultados reales de dueños reales</h2>
-
-  <div class="videos-grid">
-    <!-- ✏️ REEMPLAZÁ CADA .video-card con el iframe de Vimeo -->
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 1</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 2</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 3</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 4</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 5</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 6</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 7</span></div></div>
-    <div class="video-card reveal"><div class="video-thumb-placeholder"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 8</span></div></div>
-  </div>
-
-  <div class="google-reviews reveal">
-    <div class="google-header">
-      <div class="google-logo">Google</div>
-      <div class="google-rating">
-        <div class="stars">★★★★★</div>
-        <div class="rating-num">5.0</div>
-        <div class="rating-count">+50 valoraciones</div>
-      </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"El curso fue muy bueno, Vanesa explica de manera muy clara y los ejemplos son ideales para aplicar en los negocios."</p>
-        <div class="review-author">Marcela Paludi</div>
-        <div class="review-role">Emprendedora</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Vanesa es una excelente profesional, con mucha pedagogía para transmitir sus conocimientos. Más que recomendable."</p>
-        <div class="review-author">Fabrizio Rios</div>
-        <div class="review-role">Empresario</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Ordenamos costos, stock y ahora sé exactamente cuánto gano con cada plato. Su metodología es clara y práctica."</p>
-        <div class="review-author">Javier Martinez</div>
-        <div class="review-role">Dueño de Restaurant</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Logramos profesionalizar nuestra empresa familiar con procesos simples que todo el equipo pudo seguir."</p>
-        <div class="review-author">Laura Fernández</div>
-        <div class="review-role">Empresa Familiar</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- MÓDULOS -->
 <section class="modulos">
   <div class="modulos-inner">
     <p class="eyebrow reveal">El programa completo</p>
     <h2 class="sec-title reveal">Lo que vas a aprender en 8 semanas</h2>
-
     <div class="modulos-intro reveal">
       <strong>Antes de los módulos:</strong> Excel y habilidades empresariales — la base para que todo lo que aprendas lo puedas aplicar desde el día uno.
     </div>
-
     <div class="modulo-list">
       <div class="modulo-item reveal">
         <div class="modulo-tag">Módulo 1</div>
         <h3>Finanzas Personales y del Negocio</h3>
-        <p>Aprendés a separar tus finanzas personales de las del negocio y conocés la posición real de tu empresa. Sin números confusos, sin improvisación — con claridad desde el día uno.</p>
+        <p>Aprendés a separar tus finanzas personales de las del negocio y conocés la posición real de tu empresa. Sin números confusos, sin improvisación.</p>
       </div>
       <div class="modulo-item reveal">
         <div class="modulo-tag">Módulo 2</div>
         <h3>Gestión Operativa</h3>
-        <p>Rentabilidad real, control de precios, registro de ventas y compras, stock valorizado. Todo lo que necesitás para saber exactamente cómo está tu negocio hoy y hacia dónde va.</p>
+        <p>Rentabilidad real, control de precios, registro de ventas y compras, stock valorizado. Todo lo que necesitás para saber exactamente cómo está tu negocio.</p>
       </div>
       <div class="modulo-item reveal">
         <div class="modulo-tag">Módulo 3</div>
         <h3>Informes Automatizados para Tomar Decisiones</h3>
-        <p>Creás tus propios informes para medir, analizar y decidir con datos reales. Dejás de adivinar y empezás a dirigir tu negocio con criterio.</p>
+        <p>Creás tus propios informes para medir, analizar y decidir con datos reales. Dejás de adivinar y empezás a dirigir con criterio.</p>
       </div>
       <div class="modulo-item reveal">
         <div class="modulo-tag">Módulo 4</div>
         <h3>Control de Producción</h3>
-        <p>Para los que elaboran productos — alimentos, manufacturas, lo que sea. Controlás costos, insumos y rentabilidad de cada producto que fabricás.</p>
+        <p>Para los que elaboran productos — alimentos, manufacturas, lo que sea. Controlás costos, insumos y rentabilidad de cada producto.</p>
       </div>
     </div>
-
     <div class="bonus-card reveal">
       <div class="bonus-tag">🎁 Bonus</div>
       <h3>30 días gratis en VM Gestión Digital</h3>
@@ -307,9 +270,8 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
     <div class="precio-label">Precio especial de lanzamiento</div>
     <div class="precio-tachado">$420.000</div>
     <div class="precio-valor">$294.000</div>
-    <div class="precio-tag">Precio especial de lanzamiento</div>
+    <div class="precio-badge">Precio especial de lanzamiento</div>
     <div class="precio-cuotas">o 6 cuotas de <strong>$49.000</strong> <span class="tachado">($60.000)</span> sin interés</div>
-
     <div class="contador-wrap">
       <div class="contador-label">⏳ Este precio vence en</div>
       <div class="contador">
@@ -321,27 +283,68 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
       </div>
       <div class="contador-urgencia">"Este precio es exclusivo para quienes están listos para empezar ahora"</div>
     </div>
-
     <hr class="precio-divider">
     <ul class="precio-features">
       <li>Aprenderás a gestionar de forma integral tu negocio</li>
       <li>Excel y Habilidades Empresariales incluidos</li>
-      <li>Acceso inmediato al programa grabado y al material de trabajo</li>
+      <li>Acceso inmediato al programa grabado y material de trabajo</li>
       <li>Acceso al material grabado por 1 año en forma gratuita</li>
       <li>Grupo de consultas lunes a lunes</li>
       <li>30 días gratis en VM Gestión Digital</li>
     </ul>
   </div>
-  <button class="btn-main reveal" onclick="scrollToForm()">Quiero agendar mi llamada →</button>
+  <button class="btn-main reveal" onclick="mostrarFormulario()">Quiero agendar mi llamada →</button>
 </section>
 
-<!-- FORMULARIO -->
-<section class="form-section" id="formulario">
+<!-- TESTIMONIOS EN VIDEO -->
+<section class="testimonios-section">
+  <p class="eyebrow reveal">Lo que dicen los que ya lo hicieron</p>
+  <h2 class="sec-title reveal">Resultados reales de dueños reales</h2>
+
+  <div class="videos-grid reveal">
+    <!-- ✏️ REEMPLAZÁ CADA .video-card con iframe de Vimeo -->
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 1</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 2</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 3</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 4</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 5</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 6</span></div></div>
+  </div>
+
+  <div class="videos-extra" id="videos-extra">
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 7</span></div></div>
+    <div class="video-card"><div class="video-thumb-ph"><div class="play-sm"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><span>Testimonio 8</span></div></div>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="btn-ver-mas" id="btn-ver-mas" onclick="verMas()">Ver más testimonios →</button>
+  </div>
+
+  <!-- Google Reviews -->
+  <div class="google-reviews reveal">
+    <div class="google-header">
+      <div class="google-logo">Google</div>
+      <div class="google-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num">5.0</div>
+        <div class="rating-count">+50 valoraciones</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"El curso fue muy bueno, Vanesa explica de manera muy clara y los ejemplos son ideales para aplicar en los negocios."</p><div class="review-author">Marcela Paludi</div><div class="review-role">Emprendedora</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Vanesa es una excelente profesional, con mucha pedagogía para transmitir sus conocimientos. Más que recomendable."</p><div class="review-author">Fabrizio Rios</div><div class="review-role">Empresario</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Ordenamos costos, stock y ahora sé exactamente cuánto gano con cada plato. Su metodología es clara y práctica."</p><div class="review-author">Javier Martinez</div><div class="review-role">Dueño de Restaurant</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Logramos profesionalizar nuestra empresa familiar con procesos simples que todo el equipo pudo seguir."</p><div class="review-author">Laura Fernández</div><div class="review-role">Empresa Familiar</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO — aparece al hacer clic en el botón -->
+<section class="form-section" id="form-section">
   <div class="form-card" id="form-calificacion">
     <p class="eyebrow">Último paso</p>
     <h2>Contanos un poco sobre tu negocio</h2>
     <p class="form-sub">Respondé estas preguntas para que podamos preparar tu llamada y aprovecharla al máximo.</p>
-
     <form id="form-vsl" onsubmit="procesarFormulario(event)">
       <div class="form-group">
         <label>¿Qué tipo de negocio o emprendimiento tenés?</label>
@@ -352,17 +355,11 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
         <div class="opciones-grid">
           <button type="button" class="opcion-btn" onclick="seleccionarOpcion(this,'opcion-necesidad','A')">
             <div class="opcion-icon">📌</div>
-            <div class="opcion-text">
-              <h4>Orden, precios, rentabilidad, administración, stock y planificación</h4>
-              <p>Quiero ordenar las áreas clave de mi negocio</p>
-            </div>
+            <div class="opcion-text"><h4>Orden, precios, rentabilidad, administración, stock y planificación</h4><p>Quiero ordenar las áreas clave de mi negocio</p></div>
           </button>
           <button type="button" class="opcion-btn" onclick="seleccionarOpcion(this,'opcion-necesidad','B')">
             <div class="opcion-icon">🚀</div>
-            <div class="opcion-text">
-              <h4>Todo lo anterior y más — quiero transformar mi negocio completo</h4>
-              <p>Estoy listo/a para un cambio integral</p>
-            </div>
+            <div class="opcion-text"><h4>Todo lo anterior y más — quiero transformar mi negocio completo</h4><p>Estoy listo/a para un cambio integral</p></div>
           </button>
         </div>
         <input type="hidden" id="opcion-necesidad" required>
@@ -387,11 +384,10 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
       <p class="form-nota">Sin compromiso · La llamada es gratuita</p>
     </form>
   </div>
-
   <div class="no-califica" id="no-califica">
     <h3>¡Gracias por tu interés!</h3>
-    <p>Por ahora el programa no es el momento indicado, pero te invito a sumarte al <strong>Taller Gratuito</strong> de los domingos donde podés conocer el método sin inversión.</p>
-    <a href="index.html" class="btn-main" style="max-width:320px;margin:0 auto;">Ver el Taller Gratuito →</a>
+    <p>Por ahora el programa no es el momento indicado, pero te invito al <strong>Taller Gratuito</strong> de los domingos donde podés conocer el método sin inversión.</p>
+    <a href="https://munozvanesan-ai.github.io/taller-vmgestion/" class="btn-main" style="max-width:340px;margin:0 auto;">Ver el Taller Gratuito →</a>
   </div>
 </section>
 
@@ -405,26 +401,26 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
       data-url="https://calendly.com/TU_LINK"
       style="min-width:320px;height:630px;"></div>
     <script src="https://assets.calendly.com/assets/external/widget.js"></script> -->
-    <p>Pegá acá tu link de Calendly</p>
+    <p style="color:var(--text-light);font-size:15px;">Pegá acá tu link de Calendly</p>
   </div>
 </section>
 
 <!-- VANESA -->
-<section style="padding:72px 24px;max-width:720px;margin:0 auto;">
+<section class="vanesa-section">
   <p class="eyebrow reveal">Tu instructora</p>
   <h2 class="sec-title reveal">¿Quién es Vanesa Muñoz?</h2>
-  <div style="background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.07);" class="reveal">
-    <div style="background:var(--salmon-pale);padding:32px 28px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
-      <img src="Foto_Vane_web.jpeg.jpeg" alt="Vanesa Muñoz" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center 15%;border:3px solid var(--white);box-shadow:0 4px 16px rgba(232,146,122,0.22);flex-shrink:0;">
+  <div class="vanesa-card reveal">
+    <div class="vanesa-top">
+      <img src="Foto_Vane_web.jpeg.jpeg" alt="Vanesa Muñoz" class="vanesa-foto">
       <div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:6px;">Vanesa Muñoz</h3>
-        <p style="font-size:13px;color:var(--salmon-dark);font-weight:600;line-height:1.6;">Lic. en Administración · Auditora ISO 9001<br>Implementadora de Sistemas de Gestión para Negocios y PyMEs<br>Coach Profesional Certificada</p>
+        <h3>Vanesa Muñoz</h3>
+        <p class="vanesa-cargo">Lic. en Administración · Auditora ISO 9001<br>Implementadora de Sistemas de Gestión para Negocios y PyMEs<br>Coach Profesional Certificada</p>
       </div>
     </div>
-    <div style="padding:28px 28px;">
-      <p style="font-size:15px;line-height:1.78;color:var(--text);margin-bottom:14px;">Consultora en gestión y procesos para negocios y empresas familiares. Desde hace más de <strong>15 años</strong> acompaño a dueños que sienten que su negocio podría funcionar mejor, pero están atrapados en el caos del día a día.</p>
-      <p style="font-size:15px;line-height:1.78;color:var(--text);margin-bottom:14px;">Creadora del <strong>Sistema de Gestión VM</strong> — un método simple y probado para ordenar, profesionalizar y hacer crecer cualquier tipo de negocio.</p>
-      <p style="font-size:15px;line-height:1.78;color:var(--text);">Trabajo con vos de forma simple y humana: ordenamos, construimos claridad real para que <strong>tu negocio funcione sin depender de vos.</strong></p>
+    <div class="vanesa-body">
+      <p>Consultora en gestión y procesos para negocios y empresas familiares. Desde hace más de <strong>15 años</strong> acompaño a dueños que sienten que su negocio podría funcionar mejor, pero están atrapados en el caos del día a día.</p>
+      <p>Creadora del <strong>Sistema de Gestión VM</strong> — un método simple y probado para ordenar, profesionalizar y hacer crecer cualquier tipo de negocio.</p>
+      <p>Trabajo con vos de forma simple y humana: ordenamos, construimos claridad real para que <strong>tu negocio funcione sin depender de vos.</strong></p>
     </div>
   </div>
 </section>
@@ -435,7 +431,12 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
 </footer>
 
 <script>
-function scrollToForm(){document.getElementById('formulario').scrollIntoView({behavior:'smooth'});}
+// Mostrar formulario al hacer clic en el botón
+function mostrarFormulario(){
+  var fs = document.getElementById('form-section');
+  fs.classList.add('visible');
+  fs.scrollIntoView({behavior:'smooth'});
+}
 
 function seleccionarOpcion(btn,hiddenId,valor){
   btn.closest('.opciones-grid').querySelectorAll('.opcion-btn').forEach(b=>b.classList.remove('selected'));
@@ -456,14 +457,19 @@ function procesarFormulario(e){
   }
 }
 
-// Contador 48hs dinámico
+// Ver más testimonios
+function verMas(){
+  var extra = document.getElementById('videos-extra');
+  var btn = document.getElementById('btn-ver-mas');
+  extra.classList.add('visible');
+  btn.style.display='none';
+}
+
+// Contador 48hs
 (function(){
   var KEY='vm_vsl_contador';
   var fin=localStorage.getItem(KEY);
-  if(!fin||Date.now()>parseInt(fin)){
-    fin=Date.now()+48*60*60*1000;
-    localStorage.setItem(KEY,fin);
-  }
+  if(!fin||Date.now()>parseInt(fin)){fin=Date.now()+48*60*60*1000;localStorage.setItem(KEY,fin);}
   function actualizar(){
     var diff=parseInt(localStorage.getItem(KEY))-Date.now();
     if(diff<=0){fin=Date.now()+48*60*60*1000;localStorage.setItem(KEY,fin);diff=48*60*60*1000;}
@@ -474,14 +480,11 @@ function procesarFormulario(e){
     document.getElementById('minutos').textContent=String(m).padStart(2,'0');
     document.getElementById('segundos').textContent=String(s).padStart(2,'0');
   }
-  actualizar();
-  setInterval(actualizar,1000);
+  actualizar();setInterval(actualizar,1000);
 })();
 
 // Scroll reveal
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:0.1});
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target);}});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
