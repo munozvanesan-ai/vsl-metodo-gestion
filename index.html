@@ -21,12 +21,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(232,146,122,0.13) 0%,transparent 68%);pointer-events:none;}
 .hero::after{content:'';position:absolute;bottom:-40px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(28,53,87,0.05) 0%,transparent 70%);pointer-events:none;}
 .logo{margin-bottom:32px;}
-.logo img{width:64px;height:auto;margin:0 auto;}
+.logo img{width:80px;height:auto;margin:0 auto;display:block;}
 .hero-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--salmon-dark);margin-bottom:20px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,7vw,62px);font-weight:900;color:var(--dark);line-height:1.08;max-width:720px;margin:0 auto 8px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,64px);font-weight:900;color:var(--dark);line-height:1.08;max-width:720px;margin:0 auto 8px;}
 .hero h1 em{font-style:italic;color:var(--salmon);}
-.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--navy);margin-bottom:16px;}
-.hero-tagline{font-size:18px;font-weight:300;color:var(--text-light);max-width:520px;margin:0 auto 48px;line-height:1.7;}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,30px);font-weight:700;color:var(--salmon-dark);font-style:italic;margin-bottom:16px;}
+.hero-tagline{font-size:19px;font-weight:400;color:var(--text);max-width:520px;margin:0 auto 48px;line-height:1.7;}
 .hero-tagline strong{color:var(--text);font-weight:600;}
 
 /* Video */
@@ -73,7 +73,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
 .review-card{background:var(--cream);border-radius:var(--radius);padding:18px;}
 .review-stars{color:#FBBC05;font-size:14px;margin-bottom:8px;}
-.review-text{font-size:13px;color:var(--text);line-height:1.6;margin-bottom:10px;font-style:italic;}
+.review-text{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:10px;font-style:italic;}
 .review-author{font-size:12px;font-weight:700;color:var(--navy);}
 .review-role{font-size:11px;color:var(--text-light);}
 
@@ -91,13 +91,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .modulo-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.09);border-left:3px solid var(--salmon);border-radius:var(--radius);padding:24px 28px;}
 .modulo-tag{font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(232,146,122,0.8);text-transform:uppercase;margin-bottom:8px;}
 .modulo-item h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.modulo-item p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.65;}
+.modulo-item p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.65;}
 
 /* Bonus */
 .bonus-card{background:linear-gradient(135deg,rgba(200,150,62,0.15) 0%,rgba(232,146,122,0.1) 100%);border:1px solid rgba(200,150,62,0.35);border-radius:var(--radius);padding:24px 28px;}
 .bonus-tag{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;}
 .bonus-card h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px;}
-.bonus-card p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.65;}
+.bonus-card p{font-size:15px;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.65;}
 
 /* PRECIO */
 .precio-section{background:linear-gradient(160deg,#1C3557 0%,#2A4A73 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
@@ -165,7 +165,7 @@ footer{background:#111;padding:28px 24px;text-align:center;}
 .footer-logo img{width:52px;height:auto;margin:0 auto 8px;opacity:0.8;}
 footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
 
-/* Animaciones */
+@media(max-width:600px){body{font-size:18px;}.btn-main{font-size:18px;padding:22px 32px;}.modulo-item p,.bonus-card p,.review-text{font-size:16px;}.precio-cuotas{font-size:16px;}.form-group input,.form-group select{font-size:16px;padding:15px;}.opcion-text h4{font-size:15px;}.opcion-text p{font-size:14px;}} /* Animaciones */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 </style>
@@ -177,7 +177,7 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
   <div class="logo"><img src="LOGO_SALMON.png" alt="VM Gestión Digital"></div>
   <p class="hero-eyebrow">Programa Online · 8 Semanas</p>
   <h1>Método de Gestión Inteligente</h1>
-  <p class="hero-sub">para pequeños negocios</p>
+  <p class="hero-sub"><em>para pequeños negocios y emprendedores</em></p>
   <p class="hero-tagline">Ordená el caos operativo en 30 días.<br><strong>Amigate con la tecnología y empezá a dirigir con facilidad.</strong></p>
 
   <div class="video-container">
@@ -406,6 +406,26 @@ footer p{font-size:11px;color:rgba(255,255,255,0.28);line-height:1.6;}
       style="min-width:320px;height:630px;"></div>
     <script src="https://assets.calendly.com/assets/external/widget.js"></script> -->
     <p>Pegá acá tu link de Calendly</p>
+  </div>
+</section>
+
+<!-- VANESA -->
+<section style="padding:72px 24px;max-width:720px;margin:0 auto;">
+  <p class="eyebrow reveal">Tu instructora</p>
+  <h2 class="sec-title reveal">¿Quién es Vanesa Muñoz?</h2>
+  <div style="background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.07);" class="reveal">
+    <div style="background:var(--salmon-pale);padding:32px 28px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
+      <img src="Foto_Vane_web.jpeg" alt="Vanesa Muñoz" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center 15%;border:3px solid var(--white);box-shadow:0 4px 16px rgba(232,146,122,0.22);flex-shrink:0;">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--navy);margin-bottom:6px;">Vanesa Muñoz</h3>
+        <p style="font-size:13px;color:var(--salmon-dark);font-weight:600;line-height:1.6;">Lic. en Administración · Auditora ISO 9001<br>Implementadora de Sistemas de Gestión para Negocios y PyMEs<br>Coach Profesional Certificada</p>
+      </div>
+    </div>
+    <div style="padding:28px 28px;">
+      <p style="font-size:15px;line-height:1.78;color:var(--text);margin-bottom:14px;">Consultora en gestión y procesos para negocios y empresas familiares. Desde hace más de <strong>15 años</strong> acompaño a dueños que sienten que su negocio podría funcionar mejor, pero están atrapados en el caos del día a día.</p>
+      <p style="font-size:15px;line-height:1.78;color:var(--text);margin-bottom:14px;">Creadora del <strong>Sistema de Gestión VM</strong> — un método simple y probado para ordenar, profesionalizar y hacer crecer cualquier tipo de negocio.</p>
+      <p style="font-size:15px;line-height:1.78;color:var(--text);">Trabajo con vos de forma simple y humana: ordenamos, construimos claridad real para que <strong>tu negocio funcione sin depender de vos.</strong></p>
+    </div>
   </div>
 </section>
 
