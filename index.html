@@ -82,7 +82,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .precio-cuotas{font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:4px;}
 .precio-cuotas .tachado{text-decoration:line-through;color:rgba(255,255,255,0.28);}
 .precio-cuotas strong{color:#F2A99A;font-weight:700;}
-.contador-wrap{margin:24px 0;}
+.precio-cuotas-destacado{background:rgba(232,146,122,0.12);border:1px solid rgba(232,146,122,0.3);border-radius:12px;padding:14px 20px;margin:12px 0;}
+.cuotas-num{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,26px);font-weight:900;color:#F2A99A;margin-bottom:4px;}
+.cuotas-num strong{color:var(--white);}
+.cuotas-sub{font-size:13px;color:rgba(255,255,255,0.45);}
+.cuotas-sub .tachado{text-decoration:line-through;}
 .contador-label{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
 .contador{display:flex;align-items:center;justify-content:center;gap:8px;}
 .contador-bloque{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;min-width:64px;}
@@ -239,7 +243,10 @@ footer p{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;}
     <div class="precio-tachado">$420.000</div>
     <div class="precio-valor">$294.000</div>
     <div class="precio-badge">Precio especial de lanzamiento</div>
-    <div class="precio-cuotas">o 6 cuotas de <strong>$49.000</strong> <span class="tachado">($60.000)</span> sin interés</div>
+    <div class="precio-cuotas-destacado">
+      <div class="cuotas-num">6 cuotas de <strong>$49.000</strong></div>
+      <div class="cuotas-sub">sin interés · antes <span class="tachado">$60.000</span> c/u</div>
+    </div>
     <div class="contador-wrap">
       <div class="contador-label">⏳ Este precio vence en</div>
       <div class="contador">
@@ -296,7 +303,7 @@ footer p{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;}
           <div class="rating-count">+50 valoraciones</div>
         </div>
       </div>
-      <a class="btn-ver-reviews" href="https://g.page/r/CVg6oKKkb7dfEAE/review" target="_blank">Ver todas las valoraciones →</a>
+      <a class="btn-ver-reviews" href="https://maps.app.goo.gl/SySYNkPy8jN5yjgK8" target="_blank">Ver todas las valoraciones →</a>
     </div>
     <div class="reviews-grid">
       <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"El curso fue muy bueno, Vanesa explica de manera muy clara y los ejemplos son ideales para aplicar en los negocios."</p><div class="review-author">Marcela Paludi</div><div class="review-role">Emprendedora</div></div>
