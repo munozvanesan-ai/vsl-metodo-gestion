@@ -434,14 +434,27 @@ function seleccionarOpcion(btn,hiddenId,valor){
 function procesarFormulario(e){
   e.preventDefault();
   var inversion=document.getElementById('opcion-inversion').value;
-  if(inversion==='C'){
-    document.getElementById('form-calificacion').style.display='none';
-    document.getElementById('no-califica').style.display='block';
-  } else {
-    cerrarModal();
-    document.getElementById('calendly-section').style.display='block';
-    document.getElementById('calendly-section').scrollIntoView({behavior:'smooth'});
-  }
+  
+  // Enviar datos a Google Forms silenciosamente
+  var formData = new FormData();
+  formData.append('entry.415435992', document.getElementById('nombre').value);
+  formData.append('entry.1044400052', document.getElementById('email').value);
+  formData.append('entry.695864528', document.getElementById('tipo-negocio').value);
+  formData.append('entry.1555551673', document.getElementById('opcion-necesidad').value);
+  formData.append('entry.1751669348', document.getElementById('listo').value);
+  formData.append('entry.868057510', inversion==='A' ? 'Más de $300.000' : inversion==='B' ? 'Entre $250.000 y $300.000' : 'Todavía estoy evaluando');
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdJlxt9yG0mrpyRQuzh1ucLulxrbeaBLL260X8XOi0myqZHVA/formResponse', {
+    method:'POST', body:formData, mode:'no-cors'
+  }).finally(function(){
+    if(inversion==='C'){
+      document.getElementById('form-calificacion').style.display='none';
+      document.getElementById('no-califica').style.display='block';
+    } else {
+      cerrarModal();
+      window.open('https://wa.me/5491150603576?text=Hola%20Vanesa%2C%20complet%C3%A9%20el%20formulario%20del%20M%C3%A9todo%20de%20Gesti%C3%B3n%20Inteligente%20y%20quiero%20agendar%20una%20llamada%20%F0%9F%99%8C','_blank');
+    }
+  });
 }
 
 function verMas(){
