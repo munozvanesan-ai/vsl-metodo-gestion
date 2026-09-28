@@ -264,8 +264,10 @@ footer p{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;}
 .vt .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 .vt figcaption{margin-top:12px;font-size:15px;line-height:1.55;color:var(--text);}
 .vt figcaption strong{display:block;font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:2px;}
-.pago-directo{margin-top:18px;font-size:15px;color:rgba(255,255,255,0.65);}
-.pago-directo a{color:#F2A99A;font-weight:700;text-underline-offset:3px;}
+.pago-directo{margin:26px auto 0;max-width:480px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.pago-directo p{font-size:15px;color:rgba(255,255,255,0.7);}
+.btn-pagar{display:flex;align-items:center;justify-content:center;width:100%;padding:17px 24px;border-radius:100px;border:2px solid #F2A99A;color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;text-decoration:none;transition:background .18s;}
+.btn-pagar:hover{background:rgba(232,146,122,0.18);}
 .pago-directo[hidden]{display:none;}
 </style>
 </head>
@@ -401,7 +403,10 @@ footer p{font-size:12px;color:rgba(255,255,255,0.28);line-height:1.6;}
     </ul>
   </div>
   <button class="btn-main reveal" onclick="abrirModal()">Quiero agendar mi llamada →</button>
-  <p class="pago-directo reveal">¿Ya lo decidiste? <a href="https://mpago.la/2ohSDEV" target="_blank" rel="noopener">Pagá directo acá: 6 cuotas de $49.000 sin interés</a></p>
+  <div class="pago-directo reveal">
+    <p>¿Ya lo decidiste? No hace falta la llamada:</p>
+    <a class="btn-pagar" href="https://mpago.la/2ohSDEV" target="_blank" rel="noopener">Pagar ahora · 6 cuotas de $49.000 sin interés</a>
+  </div>
 </section>
 
 <!-- TESTIMONIOS 2 -->
